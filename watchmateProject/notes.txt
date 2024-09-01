@@ -1,0 +1,6 @@
+1. What does "iterable" mean?
+2. DRF video "Creating JSON Response- All Elements"- Complex Query Result > Python Dictionary > JSON Response
+3. Serialization and Deserialization. two types serializers.serializers, serializers.ModelSerializer
+4. Function based views/Class based views (import APIView class).
+5. Working with API > DRF Browsable API, Postman, HTTPie.
+6. When you want multiple objects, "many = True" in the MovieSerializer attribute.
