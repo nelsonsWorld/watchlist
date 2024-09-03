@@ -1,13 +1,13 @@
 from rest_framework import serializers
-from watchlist_app.models import Movie
+from watchlist_app.models import WatchList
 from rest_framework.validators import UniqueValidator
 
-class MovieSerializer(serializers.ModelSerializer):
+class WatchListSerializer(serializers.ModelSerializer):
 
     len_name = serializers.SerializerMethodField() #Look up Serializer Method Field
 
     class Meta:
-        model = Movie
+        model = WatchList
         # fields = ['id', 'account_name', 'users', 'create'] # Just an example of how the fields can be carried
         fields = "__all__"
         # exclude = ['active'] #you can only use this variable without the other 'fields' variable
