@@ -4,12 +4,19 @@ from rest_framework.validators import UniqueValidator
 
 class MovieSerializer(serializers.ModelSerializer):
 
+    len_name = serializers.SerializerMethodField() #Look up Serializer Method Field
+
     class Meta:
         model = Movie
         # fields = ['id', 'account_name', 'users', 'create'] # Just an example of how the fields can be carried
         fields = "__all__"
         # exclude = ['active'] #you can only use this variable without the other 'fields' variable
         
+    def get_len_name(self, object):
+        return len(object.name)
+        ## This way is the same as the above, just elongated
+        # length = len(object.name)
+        # return length
  
     def validate(self, data):
         if data['name'] == data['description']:
