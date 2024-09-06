@@ -3,6 +3,7 @@ from rest_framework import status
 from rest_framework.views import APIView
 from watchlist_app.models import WatchList, StreamPlatform
 from watchlist_app.api.serializers import WatchListSerializer, StreamPlatformSerializer
+#Forgot to add video
 
 class StreamPlatformAV(APIView):
 
