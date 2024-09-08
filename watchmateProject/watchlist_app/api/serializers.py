@@ -2,11 +2,7 @@ from rest_framework import serializers
 from watchlist_app.models import WatchList, StreamPlatform
 from rest_framework.validators import UniqueValidator
 
-class StreamPlatformSerializer(serializers.ModelSerializer):
 
-    class Meta:
-        model = StreamPlatform
-        fields = "__all__"
 
 class WatchListSerializer(serializers.ModelSerializer):
 
@@ -19,7 +15,7 @@ class WatchListSerializer(serializers.ModelSerializer):
         # exclude = ['active'] #you can only use this variable without the other 'fields' variable
         
     def get_len_name(self, object):
-        return len(object.name)
+        return len(object.title)
         ## This way is the same as the above, just elongated
         # length = len(object.name)
         # return length
@@ -37,3 +33,9 @@ class WatchListSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Name is too short!")
         else:
             return value
+        
+class StreamPlatformSerializer(serializers.ModelSerializer):
+    watchlist = WatchListSerializer(many=True, read_only=True) #many=True allows you to have (fill in)
+    class Meta:
+        model = StreamPlatform
+        fields = "__all__"
