@@ -34,7 +34,7 @@ class WatchListSerializer(serializers.ModelSerializer):
         else:
             return value
         
-class StreamPlatformSerializer(serializers.ModelSerializer):
+class StreamPlatformSerializer(serializers.HyperlinkedModelSerializer):
     watchlist = WatchListSerializer(many=True, read_only=True) #many=True allows you to have (fill in)
     # watchlist = serializers.StringRelatedField(many=True) #This will display all the string fields and take out any other content like pk (primary key)
     # watchlist = serializers.PrimaryKeyRelatedField(many=True, read_only=True) # This will display pk field only
