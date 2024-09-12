@@ -1,12 +1,12 @@
 from rest_framework import serializers
-from watchlist_app.models import WatchList, StreamPlatform
+from watchlist_app.models import WatchList, StreamPlatform, Reviews
 from rest_framework.validators import UniqueValidator
 
 
 class ReviewSerializer(serializers.ModelSerializer):
 
         class Meta:
-             model = Review
+             model = Reviews
 
              fields = "__all__"
 

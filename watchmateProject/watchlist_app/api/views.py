@@ -5,14 +5,12 @@ from rest_framework import mixins
 from rest_framework import generics
 
 from watchlist_app.models import WatchList, StreamPlatform
-from watchlist_app.api.serializers import WatchListSerializer, StreamPlatformSerializer
+from watchlist_app.api.serializers import WatchListSerializer, StreamPlatformSerializer, ReviewSerializer
 #Forgot to add video
 
-class SnippetList(mixins.ListModelMixin,
-                  mixins.CreateModelMixin,
-                  generics.GenericAPIView):
-    queryset = Snippet.objects.all()
-    serializer_class = SnippetSerializer
+class SnippetList(mixins.ListModelMixin, mixins.CreateModelMixin,generics.GenericAPIView):
+    queryset = Review.objects.all()
+    serializer_class = ReviewSerializer
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
