@@ -3,6 +3,12 @@ from watchlist_app.models import WatchList, StreamPlatform
 from rest_framework.validators import UniqueValidator
 
 
+class ReviewSerializer(serializers.ModelSerializer):
+
+        class Meta:
+             model = Review
+
+             fields = "__all__"
 
 class WatchListSerializer(serializers.ModelSerializer):
 
@@ -12,7 +18,7 @@ class WatchListSerializer(serializers.ModelSerializer):
         fields = "__all__"
         
         
-class StreamPlatformSerializer(serializers.HyperlinkedModelSerializer):
+class StreamPlatformSerializer(serializers.ModelSerializer):
     watchlist = WatchListSerializer(many=True, read_only=True) 
 
 
