@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from rest_framework import mixins
 from rest_framework import generics
 
-from watchlist_app.models import WatchList, StreamPlatform
+from watchlist_app.models import WatchList, StreamPlatform, Review
 from watchlist_app.api.serializers import WatchListSerializer, StreamPlatformSerializer, ReviewSerializer
 #Forgot to add video
 
