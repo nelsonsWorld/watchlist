@@ -7,4 +7,4 @@
 7. Explain function " return Movie.objects.create(**validated_data)" and why needs "**".
 
 
-1. functions based views, Class based views, generic views with mixins, generics views. 
+1. functions based views (w/decorators), Class based views (APIView), generic views with mixins, generics views. 
