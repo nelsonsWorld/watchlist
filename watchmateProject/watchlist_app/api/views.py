@@ -8,7 +8,17 @@ from watchlist_app.models import WatchList, StreamPlatform, Review
 from watchlist_app.api.serializers import WatchListSerializer, StreamPlatformSerializer, ReviewSerializer
 #Forgot to add video
 
-class SnippetList(mixins.ListModelMixin, mixins.CreateModelMixin,generics.GenericAPIView):
+
+class ReviewDetail(mixins.RetrieveModelMixin, generics.GenericAPIView):
+    queryset = Review.objects.all()
+    serializer_class= ReviewSerializer
+
+    def get(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
+
+
+
+class ReviewList(mixins.ListModelMixin, mixins.CreateModelMixin,generics.GenericAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
 
