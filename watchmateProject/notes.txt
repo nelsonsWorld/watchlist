@@ -5,3 +5,6 @@
 5. Working with API > DRF Browsable API, Postman, HTTPie.
 6. When you want multiple objects, "many = True" in the MovieSerializer attribute.
 7. Explain function " return Movie.objects.create(**validated_data)" and why needs "**".
+
+
+1. functions based views, Class based views, generic views with mixins, generics views. 
