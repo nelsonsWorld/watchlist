@@ -9,12 +9,12 @@ from watchlist_app.api.serializers import WatchListSerializer, StreamPlatformSer
 #Forgot to add video
 #Concrete View Classes 
 
-class ReviewList(generics.ListCreateAPIVew):
+class ReviewList(generics.ListCreateAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
 
 class ReviewDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Review.objects.all
+    queryset = Review.objects.all()
     serializer_class = ReviewSerializer
 
 
