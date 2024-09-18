@@ -4,11 +4,12 @@ from rest_framework.validators import UniqueValidator
 
 
 class ReviewSerializer(serializers.ModelSerializer):
+    review_user = serializers.StringRelatedField(read_only=True)
 
-        class Meta:
-             model = Review
-             exclude = ('watchlist',)
-            #  fields = "__all__"
+    class Meta:
+            model = Review
+            exclude = ('watchlist',)
+        #  fields = "__all__"
 
 class WatchListSerializer(serializers.ModelSerializer):
 

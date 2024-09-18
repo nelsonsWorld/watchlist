@@ -11,6 +11,7 @@ from watchlist_app.models import WatchList, StreamPlatform, Review
 from watchlist_app.api.serializers import WatchListSerializer, StreamPlatformSerializer, ReviewSerializer
 #Forgot to add video
 #Concrete View Classes 
+#Look into Viewsets and routers
 
 class ReviewCreate(generics.CreateAPIView):
     serializer_class = ReviewSerializer
