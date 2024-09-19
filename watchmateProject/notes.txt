@@ -8,3 +8,8 @@
 
 
 1. functions based views, Class based views, generic views with mixins, generics views, concrete views, viewsets w/routers and path include router.urls
+
+
+MAJOR ISSUES:
+
+stream/ doesn't show reviews in JSON
