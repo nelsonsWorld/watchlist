@@ -2,6 +2,7 @@ from rest_framework import serializers
 from watchlist_app.models import WatchList, StreamPlatform, Review
 from rest_framework.validators import UniqueValidator
 
+# test global variable within classes by switching names to see how it is affected.
 
 class ReviewSerializer(serializers.ModelSerializer):
     review_user = serializers.StringRelatedField(read_only=True)
