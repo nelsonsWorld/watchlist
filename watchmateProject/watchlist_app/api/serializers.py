@@ -12,6 +12,7 @@ class ReviewSerializer(serializers.ModelSerializer):
         #  fields = "__all__"
 
 class WatchListSerializer(serializers.ModelSerializer):
+    reviews = ReviewSerializer(many=True)
 
     class Meta:
         model = WatchList

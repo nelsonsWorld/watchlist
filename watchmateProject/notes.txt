@@ -19,7 +19,11 @@
 
 MAJOR ISSUES:
 
-stream/ doesn't show reviews in JSON
+stream/ doesn't show reviews in JSON, fixed: The StreamPlatform serializer was missing:
+
+class StreamPlatformSerializer(serializers.ModelSerializer):
+    watchlist = WatchListSerializer(many=True, read_only=True) <----THIS
+
 
 
 
