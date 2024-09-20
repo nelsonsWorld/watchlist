@@ -5,6 +5,11 @@ class AdminOrReadOnly(permissions.IsAdminUser):
         admin_permission = bool(request.user and request.user.is_staff)
         return request.method == "GET" or admin_permission
     
+        if request.method in permissions.SAFE_METHODS:
+            return True
+        else:
+            return bool(request.user and request.user.is_staff)
+        
 class ReviewUserOrReadOnly(permissions.BasePermission): #originally couldn't import and it was as simple case of saving this file.
 
     def has_object_permission(self, request, view, obj):
