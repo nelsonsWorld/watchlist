@@ -21,4 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('watch/', include('watchlist_app.api.urls')),
     # path('api-auth', include('rest_framework.urls')), #Removed in version_26 and Basic Authentication Video
+    path('account/', include('user_app.api.urls')),
+    
 ]
