@@ -5,7 +5,7 @@
 5. Working with API > DRF Browsable API, Postman, HTTPie.
 6. When you want multiple objects, "many = True" in the MovieSerializer attribute.
 7. Explain function " return Movie.objects.create(**validated_data)" and why needs "**".
-
+## WHEN DOING TOKEN AUTHENTICATION, THE CONSTANT DB CHECK FOR TOKEN CAN BE AN ISSUE ONCE YOU HAVE MILLIONS OF USERS ACCESSING YOUR SERVER##
 
 1. functions based views, Class based views, generic views with mixins, generics views, concrete views, viewsets w/routers and path include router.urls
 2. For blanket, global restriction, In settings.py, at the bottom below STATIC and Bigfield DB entry:
