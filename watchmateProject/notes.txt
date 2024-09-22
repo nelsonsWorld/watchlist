@@ -15,7 +15,14 @@
 #     ]
 # }
 
+3. When do you nest a response/return and when do you go to the previous indent?
 
+          ex. if X = True :
+                    if x = True:
+
+                    return ?
+                     or
+             return?
 
 MAJOR ISSUES:
 
