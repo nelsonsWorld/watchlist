@@ -19,6 +19,14 @@ from watchlist_app.api.throttling import ReviewCreateThrottle, ReviewListThrottl
 #Concrete View Classes 
 #Look into Viewsets and routers
 
+class UserReview(generics.ListAPIView):
+    serializer_class = ReviewSerializer
+
+    def get_queryset(self):
+        username = self.kwargs['username']
+        return Review.objects.filter(review_use=username)
+    
+
 class ReviewCreate(generics.CreateAPIView):
     serializer_class = ReviewSerializer
     permission_classes = [IsAuthenticated]

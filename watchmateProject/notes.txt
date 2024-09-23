@@ -35,3 +35,10 @@ class StreamPlatformSerializer(serializers.ModelSerializer):
 Version 23 learned about Global and class(possibly function?) based permissions. 
 
 
+3 purposes for filter:
+
+1. Filter conent
+2. Search content
+3. Order content
+
+
