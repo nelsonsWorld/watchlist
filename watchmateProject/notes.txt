@@ -42,3 +42,10 @@ Version 23 learned about Global and class(possibly function?) based permissions.
 3. Order content
 
 
+.gbenv/bin/python -m pip install django-filter
+
+Remember filter is good when working specific values
+search works with taking any input user
+
+watch Project Update video and video before thta and play around with
+with Search and Filter

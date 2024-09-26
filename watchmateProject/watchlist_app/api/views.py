@@ -12,7 +12,7 @@ from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnl
 from rest_framework.throttling import UserRateThrottle, AnonRateThrottle, ScopedRateThrottle
 
 from django_filters.rest_framework import DjangoFilterBackend
-
+from rest_framework import filters
 from watchlist_app.api.permissions import AdminOrReadOnly, ReviewUserOrReadOnly
 from watchlist_app.models import WatchList, StreamPlatform, Review
 from watchlist_app.api.serializers import WatchListSerializer, StreamPlatformSerializer, ReviewSerializer
@@ -166,6 +166,17 @@ class StreamPlatformDetailAV(APIView):
         else:
             return Response(serializer.errors)
 
+
+class WatchList(generics.ListAPIView):
+    queryset = WatchList.objects.all()
+    serializer_class = WatchListSerializer
+   # permission_classes = [IsAuthenticated]
+   # throttle_classes = [ReviewCreateThrottle,AnonRateThrottle]
+   # filter_backends = [filters.SearchFilter]
+    #filter_backends = [DjangoFilterBackend]
+    filter_backends = [filters.OrderingFilter] 
+    ordering_fields = ['avg_rating']
+    #filterset_fields = ['title', 'platform__name']
 
 class WatchListAV(APIView): #Inheriting the APIView class
 
