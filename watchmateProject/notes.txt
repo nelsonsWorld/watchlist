@@ -49,3 +49,19 @@ search works with taking any input user
 
 watch Project Update video and video before thta and play around with
 with Search and Filter
+
+
+Don't forget you never EVER name a view class or function the same name as a model. 
+
+
+```````````MASTER BASE WEBSITE DESIGN~~~~~~~~~~~~~~~
+
+1. ORM/DB DESIGN
+2. URIs
+3. functions
+4. AUTHENTICATION
+5. Security
+6. Throttling (if this is public API, pay per call to monthly subscription, etc)
+7. Search/Filter/Ordering
+8. Pagination (how many results per page all depends on client and cost)
+9. JSON or XML?

@@ -167,7 +167,7 @@ class StreamPlatformDetailAV(APIView):
             return Response(serializer.errors)
 
 
-class WatchList(generics.ListAPIView):
+class WatchListGV(generics.ListAPIView): # GV= Generic Views
     queryset = WatchList.objects.all()
     serializer_class = WatchListSerializer
    # permission_classes = [IsAuthenticated]
