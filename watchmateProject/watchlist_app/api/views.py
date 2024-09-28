@@ -17,6 +17,8 @@ from watchlist_app.api.permissions import AdminOrReadOnly, ReviewUserOrReadOnly
 from watchlist_app.models import WatchList, StreamPlatform, Review
 from watchlist_app.api.serializers import WatchListSerializer, StreamPlatformSerializer, ReviewSerializer
 from watchlist_app.api.throttling import ReviewCreateThrottle, ReviewListThrottle
+from watchlist_app.api.pagination import WatchListPagination
+
 #Forgot to add video
 #Concrete View Classes 
 #Look into Viewsets and routers
@@ -170,6 +172,7 @@ class StreamPlatformDetailAV(APIView):
 class WatchListGV(generics.ListAPIView): # GV= Generic Views
     queryset = WatchList.objects.all()
     serializer_class = WatchListSerializer
+    pagination_class = WatchListPagination
    # permission_classes = [IsAuthenticated]
    # throttle_classes = [ReviewCreateThrottle,AnonRateThrottle]
    # filter_backends = [filters.SearchFilter]
