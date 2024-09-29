@@ -147,6 +147,9 @@ REST_FRAMEWORK = {
         'review-detail' : '1/day'
 
     },
+     'DEFAULT_RENDERER_CLASSES': (
+         'rest_framework.renderers.JSONRenderer', # This is to disable the browsable API, you can comment it out, test changes, and comment this section again when ready to push to production.
+     )
 #     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
 #     'PAGE_SIZE':1,
 }
