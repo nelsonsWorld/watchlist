@@ -72,3 +72,6 @@ Don't forget you never EVER name a view class or function the same name as a mod
 !!!!!!!!!!!!!Pagination
 
 1. There are many types of pagination
+2. Limit and Offset - 
+    Limit how many items we want
+    Offset from where we want

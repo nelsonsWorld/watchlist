@@ -17,7 +17,7 @@ from watchlist_app.api.permissions import AdminOrReadOnly, ReviewUserOrReadOnly
 from watchlist_app.models import WatchList, StreamPlatform, Review
 from watchlist_app.api.serializers import WatchListSerializer, StreamPlatformSerializer, ReviewSerializer
 from watchlist_app.api.throttling import ReviewCreateThrottle, ReviewListThrottle
-from watchlist_app.api.pagination import WatchListPagination
+from watchlist_app.api.pagination import WatchListPagination, WatchListLOPagination, WatchListCPagination
 
 #Forgot to add video
 #Concrete View Classes 
@@ -172,13 +172,13 @@ class StreamPlatformDetailAV(APIView):
 class WatchListGV(generics.ListAPIView): # GV= Generic Views
     queryset = WatchList.objects.all()
     serializer_class = WatchListSerializer
-    pagination_class = WatchListPagination
+    pagination_class = WatchListCPagination
    # permission_classes = [IsAuthenticated]
    # throttle_classes = [ReviewCreateThrottle,AnonRateThrottle]
    # filter_backends = [filters.SearchFilter]
     #filter_backends = [DjangoFilterBackend]
-    filter_backends = [filters.OrderingFilter] 
-    ordering_fields = ['avg_rating']
+    # filter_backends = [filters.OrderingFilter] #Commented out due to Cursor pagination config conflict.
+    # ordering_fields = ['avg_rating'] #Commented out due to Cursor pagination config conflict.
     #filterset_fields = ['title', 'platform__name']
 
 class WatchListAV(APIView): #Inheriting the APIView class
